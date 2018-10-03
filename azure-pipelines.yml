@@ -25,9 +25,9 @@ stages:
 
 - stage: C
   dependsOn: A
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/releases')
   jobs:
   - job: C
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/releases')
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
