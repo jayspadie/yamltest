@@ -21,3 +21,23 @@ stages:
     steps:
     - script: echo QA!
 
+- stage: C
+  dependsOn: A
+  jobs:
+  - job: C
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+    - script: echo QA!
+    
+- stage: D
+  dependsOn:
+  - B
+  - C
+  jobs:
+  - job: D
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+    - script: echo QA!
+
