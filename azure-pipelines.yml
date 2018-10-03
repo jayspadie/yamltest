@@ -5,18 +5,17 @@
 
 stages:
 - stage: Build
-  pool:
-    vmImage: 'Ubuntu 16.04'
-
-  steps:
-  - script: echo Build!
+  job:
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+    - script: echo Build!
 
 - stage: QA
-  pool:
-    vmImage: 'Ubuntu 16.04'
+  job:
+    pool:
+      vmImage: 'Ubuntu 16.04'
 
-  steps:
-  - script: echo QA!
-
-
+    steps:
+    - script: echo QA!
 
