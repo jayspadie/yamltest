@@ -11,7 +11,7 @@ stages:
       vmImage: 'Ubuntu 16.04'
     steps:
     - checkout: none
-    - script: A!
+    - script: echo A!
 
 - stage: B
   dependsOn: A
@@ -21,7 +21,7 @@ stages:
       vmImage: 'Ubuntu 16.04'
     steps:
     - checkout: none
-    - script: B!
+    - script: echo B!
 
 - stage: C
   dependsOn: A
@@ -32,7 +32,7 @@ stages:
       vmImage: 'Ubuntu 16.04'
     steps:
     - checkout: none
-    - script: C!
+    - script: echo C!
     
 - stage: D
   dependsOn:
@@ -44,5 +44,5 @@ stages:
       vmImage: 'Ubuntu 16.04'
     steps:
     - checkout: none
-    - script: D!
+    - script: echo D!
 
