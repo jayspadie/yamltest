@@ -23,7 +23,7 @@ stages:
 
 - stage: C
   dependsOn: A
-  condition: true
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/releases')
   jobs:
   - job: C
     pool:
