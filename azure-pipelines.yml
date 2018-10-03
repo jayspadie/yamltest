@@ -4,17 +4,18 @@
 # https://aka.ms/yaml
 
 stages:
-- stage: Build
+- stage: A
   jobs:
-  - job:
+  - job: A
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
     - script: echo Build!
 
-- stage: QA
+- stage: B
+  dependsOn: A
   jobs:
-  - job:
+  - job: B
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
