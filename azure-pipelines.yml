@@ -38,6 +38,7 @@ stages:
   dependsOn:
   - B
   - C
+  condition: always()
   jobs:
   - job: D
     pool:
