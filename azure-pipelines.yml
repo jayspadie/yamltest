@@ -10,7 +10,8 @@ stages:
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
-    - script: echo Build!
+    - checkout: none
+    - script: A!
 
 - stage: B
   dependsOn: A
@@ -19,7 +20,8 @@ stages:
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
-    - script: echo QA!
+    - checkout: none
+    - script: B!
 
 - stage: C
   dependsOn: A
@@ -29,7 +31,8 @@ stages:
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
-    - script: echo QA!
+    - checkout: none
+    - script: C!
     
 - stage: D
   dependsOn:
@@ -40,5 +43,6 @@ stages:
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
-    - script: echo QA!
+    - checkout: none
+    - script: D!
 
